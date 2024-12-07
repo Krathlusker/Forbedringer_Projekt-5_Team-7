@@ -392,6 +392,7 @@ a {
 
 .hero {
     height: 400px;
+    background-color: var(--fl-darkgray);
 }
 
 .hero--tall {
@@ -413,7 +414,7 @@ a {
 
 .hero__content {
     padding: 30px;
-    max-width: 600px;
+    max-width: 550px;
 }
 
 .opening-hours {
@@ -438,8 +439,24 @@ a {
     padding: 20px 0;
 }
 
-.section--align-center {
-    text-align: center;
+.section--fifty-fifty {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.section--fifty-fifty > .wrapper {
+    flex-basis: 100%;
+    margin: 0;
+}
+
+.section--fifty-fifty > .wrapper > .content {
+    width: 100%;
+    padding: 40px 0 50px;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .content {
@@ -472,6 +489,26 @@ a {
 }
 
 @media screen and (min-width: 600px) {
+
+    .section--fifty-fifty > .wrapper {
+        flex-basis: 50%;
+    }
+
+    .section--fifty-fifty > .wrapper:first-child > .content,
+    .section--fifty-fifty > .wrapper:last-child > .content {
+        width: calc(100% - 20px);
+        max-width: calc(var(--content-width-standard) / 2);
+    }
+
+    .section--fifty-fifty > .wrapper:first-child > .content {
+        padding: 40px 40px 50px 0;
+        margin: 0 0 0 auto;
+    }
+
+    .section--fifty-fifty > .wrapper:last-child > .content {
+        padding: 40px 0 50px 40px;
+        margin: 0 auto 0 0;
+    }
 
     .columns {
         flex-direction: row;
