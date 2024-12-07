@@ -773,10 +773,3 @@ button:hover,
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
-
-
-
-.test {
-    height: 1000px;
-}
