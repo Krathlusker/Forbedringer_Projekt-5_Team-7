@@ -481,6 +481,37 @@ h3 a {
 
 /*
     ----------
+    Styling til knapper
+    ----------
+*/
+
+button,
+.button {
+    appearance: none;
+    border: none;
+    border-radius: var(--border-radius-normal);
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-normal);
+    padding: calc(1.125em - 5px) 1.625em 1.125em 1.625em;
+    background-color: var(--fl-gray);
+    color: var(--fl-black);
+    box-shadow: inset 0 -6px 0 color-mix(in srgb, var(--fl-gray), var(--fl-black) 40%);
+    cursor: pointer;
+    transition: transform var(--transition-standard);
+    transition-property: transform, box-shadow, padding, margin-bottom;
+}
+
+button:hover,
+.button:hover {
+    transform: translateY(5px);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--fl-gray), var(--fl-black) 40%);
+    padding: calc(1.125em - 5px) 1.625em;
+    margin-bottom: 5px;
+}
+
+/*
+    ----------
     Styling til generelt indhold
     ----------
 */
