@@ -156,6 +156,41 @@ a {
 
 /*
     ----------
+    Styling til genanvendelige classes
+    ----------
+*/
+
+.secondary-font {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+}
+
+.background-blue {
+    background-color: var(--fl-blue);
+    color: var(--fl-white);
+}
+
+.background-green {
+    background-color: var(--fl-green);
+    color: var(--fl-black);
+}
+
+.background-orange {
+    background-color: var(--fl-orange);
+    color: var(--fl-white);
+}
+
+.background-black {
+    background-color: var(--fl-black);
+    color: var(--fl-white);
+}
+
+.align-center {
+    text-align: center;
+}
+
+/*
+    ----------
     Styling til header og tilhørende elementer
     ----------
 */
@@ -346,6 +381,100 @@ a {
 
     .nav-toggle {
         display: none;
+    }
+}
+
+/*
+    ----------
+    Styling til hero og tilhørende elementer
+    ----------
+*/
+
+.hero {
+    height: 400px;
+}
+
+.hero--tall {
+    height: 600px;
+}
+
+.hero-inner {
+    height: 100%;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.hero__content {
+    padding: 30px;
+    max-width: 600px;
+}
+
+.opening-hours {
+    padding: 15px 30px;
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--fl-green);
+    color: var(--fl-black);
+}
+
+/*
+    ----------
+    Styling til generelt indhold
+    ----------
+*/
+
+.section {
+    padding: 40px 0 50px;
+}
+
+.section--short {
+    padding: 20px 0;
+}
+
+.section--align-center {
+    text-align: center;
+}
+
+.content {
+    height: 100%;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    gap: 40px;
+}
+
+*:has(+ .columns),
+*:has(+ .columns),
+*:has(+ .columns) {
+    margin-bottom: 30px;
+}
+
+.columns:has(+ *) {
+    margin-bottom: 30px;
+}
+
+.column {
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+
+    .columns {
+        flex-direction: row;
     }
 }
 
