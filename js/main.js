@@ -28,4 +28,18 @@ window.addEventListener('scroll', () => {
     } else {
         mainHeader.classList.remove('header--scrolled');
     }
-}); 
+});
+
+/* Tilføj åbne- og lukkefunktion til FAQ */
+
+const faqs = document.querySelectorAll('.faq');
+
+faqs.forEach((faq) => {
+    faq.children[0].addEventListener('click', () => {
+        if (!faq.classList.contains('faq--open')) {
+            faq.classList.add('faq--open');
+        } else {
+            faq.classList.remove('faq--open');
+        }
+    });
+});

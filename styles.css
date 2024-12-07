@@ -195,6 +195,11 @@ h3 a {
     text-align: center;
 }
 
+.align-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /*
     ----------
     Styling til formularer og tilhørende elementer
@@ -562,6 +567,93 @@ h3 a {
     .columns {
         flex-direction: row;
     }
+}
+
+/*
+    ----------
+    Styling til FAQ
+    ----------
+*/
+
+.faq-wrapper {
+    max-width: 800px;
+}
+
+* + .faq-wrapper {
+    margin-top: 40px;
+}
+
+.faq-wrapper:has(+ *) {
+    margin-bottom: 40px;
+}
+
+.faq {
+    border-top: 2px solid currentcolor;
+}
+
+.faq:last-child {
+    border-bottom: 2px solid currentcolor;
+}
+
+.faq__question {
+    padding: 15px 65px 15px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.faq__question p {
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+}
+
+.faq__toggle {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.faq__toggle::before,
+.faq__toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 3px;
+    width: 25px;
+    background-color: var(--fl-black);
+    transform-origin: center center;
+}
+
+.faq__toggle::before {
+    transform: translate(-50%, -50%);
+}
+
+.faq__toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform var(--transition-standard);
+}
+
+.faq--open .faq__toggle::after {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.faq__answer {
+    border-top: 1px solid currentcolor;
+    transform-origin: top center;
+    transition: transform var(--transition-standard);
+    transition-property: transform, padding, font-size;
+    transform: scaleY(0);
+    padding: 0 20px;
+    font-size: 0;
+}
+
+.faq--open .faq__answer {
+    transform: scaleY(1) translateY(0);
+    padding: 15px 20px;
+    font-size: var(--font-size-normal);
 }
 
 /*
