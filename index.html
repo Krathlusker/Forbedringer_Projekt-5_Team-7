@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://use.typekit.net/dfa7gvi.css">
     <link rel="stylesheet" href="styles.css">
     <script src="js/main.js" defer></script>
     <title>FabLab UCL</title>
@@ -10,12 +13,30 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <a aria-label="Gå til forsiden" href="./index.html" class="header__home-link"></a>
+            <a aria-label="Gå til forsiden" href="./index.html" class="header__home-link">
+                <svg class="header__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 948.385"><defs><style>.b{fill:#3b44f6;}.c{fill:#193091;}.d{fill:#fff;}</style></defs><path class="c" d="M919.037,924.749h0s0,0,0,0c-14.879,14.612-35.266,23.635-57.767,23.635H82.465c-45.544,0-82.465-36.921-82.465-82.465V153.032c0-20.822,7.733-39.826,20.463-54.339l-.059.039L75.19,29.902l-18.559,44.797-.06.04c8.146-2.693,16.845-4.171,25.893-4.171h778.804c45.544,0,82.465,36.921,82.465,82.465v712.888c0,2.622-.136,5.212-.376,7.772v-.002s37.958-26.069,37.958-26.069l-50.357,62.363c-3.405,5.373-7.405,10.329-11.923,14.766Z"/><path class="b" d="M917.535,877.818H138.731c-45.544,0-82.465-36.921-82.465-82.465V82.465C56.266,36.921,93.187,0,138.731,0h778.804c45.544,0,82.465,36.921,82.465,82.465v712.888c0,45.544-36.921,82.465-82.465,82.465Z"/><path class="d" d="M188.605,431.813V131.654h180.59l-4.123,63.494h-104.725v61.022h85.76v61.846h-85.76v113.797h-71.742ZM363.019,431.813l94.83-300.159h92.358l95.243,300.159h-74.629l-16.49-54.013h-100.605l-16.492,54.013h-74.216ZM471.867,318.428h64.32l-32.159-104.725-32.16,104.725ZM664.177,431.813V131.654h108.436c55.25,0,111.736,20.615,111.736,81.637,0,30.923-17.317,49.064-40.819,59.784,32.573,11.544,53.189,33.809,53.189,69.68,0,65.142-42.881,89.058-129.463,89.058h-103.078ZM735.918,190.201v60.198h39.581c21.44,0,37.109-11.958,37.109-30.099s-15.669-30.099-42.057-30.099h-34.634ZM735.918,308.946v64.318h37.109c37.931,0,51.951-13.192,51.951-32.158s-12.783-32.16-41.643-32.16h-47.417ZM188.605,751.088v-300.159h71.742v234.19h100.603l-4.123,65.969h-168.222ZM363.018,751.088l94.83-300.159h92.357l95.245,300.159h-74.629l-16.493-54.013h-100.603l-16.492,54.013h-74.216ZM471.867,637.704h64.321l-32.16-104.727-32.16,104.727ZM664.177,751.088v-300.159h108.436c55.25,0,111.736,20.616,111.736,81.638,0,30.922-17.317,49.063-40.819,59.782,32.573,11.546,53.189,33.81,53.189,69.682,0,65.145-42.881,89.058-129.463,89.058h-103.078ZM735.918,509.476v60.198h39.581c21.44,0,37.109-11.956,37.109-30.098s-15.669-30.1-42.057-30.1h-34.634ZM735.918,628.22v64.321h37.109c37.931,0,51.951-13.194,51.951-32.162s-12.783-32.159-41.643-32.159h-47.417Z"/></svg>
+            </a>
 
             <nav aria-label="Navigation desktop - vælg side" class="main-nav main-nav-desktop">
                 <ul class="main-nav__items">
+                    <li class="main-nav__item main-nav__item--current-page">
+                        <a href="./index.html" class="main-nav__link">Forside</a>
+                    </li>
+
                     <li class="main-nav__item">
-                        <a href="./index.html" class="main-nav__link main-nav__link--current-page">Forside</a>
+                        <a href="./om-fablab.html" class="main-nav__link">Om FabLab</a>
+                    </li>
+
+                    <li class="main-nav__item">
+                        <a href="./inspiration.html" class="main-nav__link">Inspiration</a>
+                    </li>
+
+                    <li class="main-nav__item">
+                        <a href="./aktiviteter.html" class="main-nav__link">Aktiviteter</a>
+                    </li>
+
+                    <li class="main-nav__item">
+                        <a href="./kontakt.html" class="main-nav__link">Kontakt</a>
                     </li>
                 </ul>
             </nav>
@@ -38,8 +59,24 @@
         </div>
 
         <ul class="main-nav__items">
+            <li class="main-nav__item main-nav__item--current-page">
+                <a href="./index.html" class="main-nav__link">Forside</a>
+            </li>
+
             <li class="main-nav__item">
-                <a href="./index.html" class="main-nav__link main-nav__link--current-page">Forside</a>
+                <a href="./om-fablab.html" class="main-nav__link">Om FabLab</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="./inspiration.html" class="main-nav__link">Inspiration</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="./aktiviteter.html" class="main-nav__link">Aktiviteter</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="./kontakt.html" class="main-nav__link">Kontakt</a>
             </li>
         </ul>
 

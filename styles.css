@@ -18,15 +18,152 @@ blockquote {
 
 /*
     ----------
+    Variabler
+    ----------
+*/
+
+:root {
+    --fl-black: #2B2B2B;
+    --fl-white: #FFFFFF;
+    --fl-gray: #F3F5F6;
+    --fl-darkgray: #B0B0B0;
+    --fl-blue: #3B44F6;
+    --fl-green: #16FF00;
+    --fl-orange: #FF800A;
+    --font-stack-primary: ivystyle-sans, system-ui, sans-serif;
+    --font-stack-secondary: lores-12, system-ui, sans-serif;
+    --font-size-normal: 16px;
+    --font-size-medium: 1.375rem;
+    --font-size-large: 1.5rem;
+    --font-size-huge: 1.875rem;
+    --font-size-small: 0.825rem;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --line-height-normal: 1.33;
+    --line-height-heading: 1.125;
+    --content-width-standard: 1300px;
+    --content-width-narrow: 700px;
+    --transition-standard: 150ms ease-in-out;
+    --border-radius-normal: 8px;
+}
+
+@media screen and (min-width: 600px) {
+
+    :root {
+        --font-size-large: 1.875rem;
+        --font-size-huge: 2rem;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    :root {
+        --font-size-huge: 2.25rem;
+    }
+}
+
+/*
+    ----------
+    Basis-styling
+    ----------
+*/
+
+body {
+    font-family: var(--font-stack-primary);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    background-color: var(--fl-gray);
+    color: var(--fl-black);
+    overflow-x: hidden;
+}
+
+.body--no-scroll {
+    overflow-y: hidden;
+    pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-heading);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h1:has(+ *),
+h2:has(+ *),
+h3:has(+ *) {
+    margin-bottom: 0.375em;
+}
+
+h1 {
+    font-size: var(--font-size-huge);
+}
+
+h2 {
+    font-size: var(--font-size-large);
+}
+
+h3 {
+    font-size: var(--font-size-medium);
+}
+
+p {
+    margin: 0;
+}
+
+p:has(+ p) {
+    margin-bottom: 0.75em;
+}
+
+p:has(+ *:not(p)) {
+    margin-bottom: 1.375em;
+}
+
+a {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--fl-orange);
+}
+
+/*
+    ----------
+    Styling til genanvendelige elementer
+    ----------
+*/
+
+.some-icon-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.some-icon {
+    height: auto;
+    width: 32px;
+    display: block;
+    transition: fill var(--transition-standard);
+}
+
+.some-link:hover .some-icon {
+    fill: var(--fl-orange);
+}
+
+/*
+    ----------
     Styling til header og tilhørende elementer
     ----------
 */
 
 .header {
-    height: 80px;
+    height: 90px;
     padding: 15px 0;
     box-sizing: border-box;
-    background-color: var(--white);
     position: sticky;
     top: 0;
     z-index: 4;
@@ -38,22 +175,51 @@ blockquote {
     max-width: var(--content-width-standard);
     margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
 
 .header__home-link {
     height: 100%;
     margin-right: auto;
+    display: flex;
 }
 
 .header__logo {
-    height: 100%;
-    width: auto;
-    fill: var(--black);
+    height: auto;
+    width: 60px;
 }
 
 .main-nav-desktop {
     display: none;
+}
+
+.main-nav__items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.main-nav__link {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    background-color: var(--fl-darkgray);
+    color: var(--fl-white);
+    position: relative;
+    display: block;
+    transition: background-color var(--transition-standard);
+}
+
+.main-nav__link:hover {
+    background-color: var(--fl-blue);
+}
+
+.main-nav__item--current-page .main-nav__link {
+    background-color: var(--fl-blue);
 }
 
 .main-nav-mobile {
@@ -66,7 +232,7 @@ blockquote {
     transform: translateX(100%);
     transition: var(--transition-standard);
     z-index: 4;
-    background-color: var(--white);
+    background-color: var(--fl-gray);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,75 +245,27 @@ blockquote {
     pointer-events: initial;
 }
 
-.main-nav__items {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 1.5em;
-}
-
 .main-nav-mobile .main-nav__items {
     flex-direction: column;
 }
 
-.main-nav__link {
-    font-family: var(--font-stack-secondary);
-    font-weight: var(--font-weight-black);
-    text-transform: uppercase;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-}
-
-.main-nav__link::after {
-    content: '';
-    position: absolute;
-    top: calc(100% + 1px);
-    left: 0;
-    height: 5px;
-    width: 100%;
-    background-color: var(--orange);
-    transition: transform var(--transition-standard);
-    transform-origin: top center;
-    transform: scaleY(0);
-}
-
-.main-nav__link:hover::after {
-    transform: scaleY(1);
-}
-
-.main-nav__link--current-page::after {
-    transform: scaleY(1);
-}
-
 .main-nav-mobile .main-nav__link {
-    font-size: var(--font-size-large);
-}
-
-.header-inner > .language-selector {
-    margin-left: 40px;
-    font-size: var(--font-size-small);
-    display: none;
-}
-
-.main-nav-mobile .some-icon-wrapper {
-    gap: 20px;
-}
-
-.main-nav-mobile .some-icon {
-    width: 40px;
-    fill: var(--black);
-}
-
-.main-nav-mobile .language-selector {
     font-size: var(--font-size-medium);
 }
 
+.main-nav-mobile .some-icon-wrapper {
+    gap: 25px;
+}
+
+.main-nav-mobile .some-icon {
+    width: 50px;
+    fill: var(--fl-darkgray);
+}
+
 .nav-toggle {
-    height: 100%;
-    width: 45px;
-    padding-left: 15px;
-    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    background-color: var(--fl-orange);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,7 +281,7 @@ blockquote {
 .hamburger__line {
     height: 3px;
     width: 30px;
-    background-color: var(--black);
+    background-color: var(--fl-white);
     position: absolute;
     top: 50%;
     right: 0;
@@ -193,7 +311,7 @@ blockquote {
 .nav-close__line {
     height: 3px;
     width: 30px;
-    background-color: var(--black);
+    background-color: var(--fl-black);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -209,11 +327,15 @@ blockquote {
 
 @media screen and (min-width: 840px) {
 
-    .main-nav-desktop {
-        display: flex;
+    .header {
+        height: 100px;
     }
 
-    .header-inner > .language-selector {
+    .header__logo {
+        width: 70px;
+    }
+
+    .main-nav-desktop {
         display: flex;
     }
 
