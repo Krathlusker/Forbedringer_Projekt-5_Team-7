@@ -216,7 +216,7 @@ h3 a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.125rem;
+    gap: 0.25rem;
 }
 
 .form__element label {
@@ -230,6 +230,34 @@ h3 a {
 .form__element input,
 .form__element textarea {
     width: 100%;
+}
+
+input[type=text],
+textarea {
+    appearance: none;
+    font-family: var(--font-stack-primary);
+    font-size: var(--font-size-normal);
+    background-color: var(--fl-gray);
+    color: var(--fl-black);
+    padding: 0.75em 0.75em 0.5em;
+    line-height: var(--line-height-normal);
+    border: none;
+    border-radius: var(--border-radius-normal);
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--fl-darkgray);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
 }
 
 @media screen and (min-width: 600px) {
