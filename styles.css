@@ -219,6 +219,10 @@ h3 a {
     gap: 0.25rem;
 }
 
+.form__element--span-2 {
+    grid-column: span 2;
+}
+
 .form__element label {
     font-family: var(--font-stack-secondary);
     font-size: var(--font-size-small);
