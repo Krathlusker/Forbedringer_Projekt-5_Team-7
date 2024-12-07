@@ -17,3 +17,15 @@ mobileNavClose.addEventListener('click', () => {
         document.body.classList.remove('body--no-scroll');
     }
 });
+
+/* Tilføj baggrund på header ved scroll */
+
+const mainHeader = document.getElementById('main-header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        mainHeader.classList.add('header--scrolled');
+    } else {
+        mainHeader.classList.remove('header--scrolled');
+    }
+}); 

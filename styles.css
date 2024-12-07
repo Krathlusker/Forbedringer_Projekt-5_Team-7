@@ -87,8 +87,8 @@ body {
 h1,
 h2,
 h3 {
-    font-family: var(--font-stack-secondary);
-    font-weight: var(--font-weight-black);
+    font-family: var(--font-stack-primary);
+    font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
     text-transform: uppercase;
     margin: 0;
@@ -161,12 +161,21 @@ a {
 */
 
 .header {
-    height: 90px;
+    height: auto;
     padding: 15px 0;
     box-sizing: border-box;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 4;
+    background: transparent;
+    transition: background-color var(--transition-standard);
+    transition-property: background-color, padding;
+}
+
+.header--scrolled {
+    background-color: var(--fl-black);
+    padding: 8px 0;
 }
 
 .header-inner {
@@ -327,10 +336,6 @@ a {
 
 @media screen and (min-width: 840px) {
 
-    .header {
-        height: 100px;
-    }
-
     .header__logo {
         width: 70px;
     }
@@ -342,4 +347,98 @@ a {
     .nav-toggle {
         display: none;
     }
+}
+
+/*
+    ----------
+    Styling til footer og tilhørende elementer
+    ----------
+*/
+
+.footer {
+    background-color: var(--fl-black);
+    color: var(--fl-white);
+    padding: 50px 0;
+}
+
+.footer-inner {
+    height: 100%;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    column-gap: 60px;
+}
+
+.footer-row:has(+ .footer-row) {
+    margin-bottom: 40px;
+}
+
+.footer__heading {
+    margin: 0;
+    font-size: var(--font-size-medium);
+}
+
+.footer__heading:has(+ *) {
+    margin-bottom: 0.75em;
+}
+
+.footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer-list__item {
+    font-family: var(--font-stack-secondary);
+}
+
+.footer-list__link {
+    position: relative;
+    text-decoration: none;
+    left: 1ch;
+    color: var(--fl-white);
+}
+
+.footer-list__link::before {
+    content: '›';
+    position: relative;
+    left: -1ch;
+    color: var(--fl-orange);
+}
+
+.footer__maps {
+    height: 300px;
+    width: 100%;
+}
+
+.footer .some-icon {
+    fill: var(--fl-white);
+}
+
+@media screen and (min-width: 600px) {
+
+    .footer-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .footer-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+
+.test {
+    height: 1000px;
 }
