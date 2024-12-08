@@ -206,13 +206,16 @@ h3 a {
     color: var(--fl-white);
 }
 
-.text-align-center {
-    text-align: center;
-}
-
 .align-center {
     margin-right: auto;
     margin-left: auto;
+}
+
+@media screen and (min-width: 600px) {
+
+    .text-align-center {
+        text-align: center;
+    }
 }
 
 /*
@@ -342,6 +345,7 @@ textarea:focus::placeholder {
 
 .card__content {
     position: relative;
+    color: var(--fl-white);
 }
 
 @media screen and (min-width: 600px) {
