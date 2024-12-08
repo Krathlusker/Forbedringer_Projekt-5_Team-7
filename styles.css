@@ -630,6 +630,42 @@ button:hover,
     margin-bottom: 5px;
 }
 
+.pagination-arrows {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+* + .pagination-arrows {
+    margin-top: 30px;
+}
+
+.pagination-arrows:has(+ *) {
+    margin-bottom: 30px;
+}
+
+.pagination-arrow {
+    padding: calc(1em - 5px) 1.25em 1em 1.25em;
+}
+
+.pagination-arrow:hover {
+    padding: calc(1em - 5px) 1.25em;
+}
+
+.pagination-arrow .icon--arrow {
+    transform-origin: center center;
+    width: 16px;
+}
+
+.pagination-arrow--left .icon--arrow {
+    transform: rotate(-90deg);
+}
+
+.pagination-arrow--right .icon--arrow {
+    transform: rotate(90deg);
+}
+
 /*
     ----------
     Styling til generelt indhold
