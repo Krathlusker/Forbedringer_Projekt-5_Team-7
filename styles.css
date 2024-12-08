@@ -653,6 +653,8 @@ button:hover,
 .section--fifty-fifty > .wrapper {
     flex-basis: 100%;
     margin: 0;
+    position: relative;
+    min-height: 250px;
 }
 
 .section--fifty-fifty > .wrapper > .content {
@@ -662,6 +664,15 @@ button:hover,
     max-width: var(--content-width-standard);
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+.section--fifty-fifty > .wrapper > .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .content {
