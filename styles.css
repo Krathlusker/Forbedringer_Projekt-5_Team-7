@@ -160,6 +160,16 @@ h3 a {
     fill: var(--fl-orange);
 }
 
+.tag {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    padding: 0.5em 1.25em;
+    border-radius: 30px;
+    background-color: var(--fl-black);
+    color: var(--fl-white);
+}
+
 /*
     ----------
     Styling til genanvendelige classes
@@ -169,6 +179,11 @@ h3 a {
 .secondary-font {
     font-family: var(--font-stack-secondary);
     font-weight: var(--font-weight-bold);
+}
+
+.background-gray {
+    background-color: var(--fl-gray);
+    color: var(--fl-black);
 }
 
 .background-blue {
@@ -272,6 +287,66 @@ textarea:focus::placeholder {
 
     .form__element--textarea {
         grid-column: 1 / span 2;
+    }
+}
+
+/*
+    ----------
+    Styling til cards
+    ----------
+*/
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.card {
+    position: relative;
+    border-radius: var(--border-radius-normal);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    min-height: 280px;
+}
+
+.card__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card__background-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__tag {
+    position: relative;
+}
+
+.card__content {
+    position: relative;
+}
+
+@media screen and (min-width: 600px) {
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -489,9 +564,8 @@ textarea:focus::placeholder {
 
 .hero__video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -543,6 +617,7 @@ button,
     color: var(--fl-black);
     box-shadow: inset 0 -6px 0 color-mix(in srgb, var(--fl-gray), var(--fl-black) 40%);
     cursor: pointer;
+    display: inline-block;
     transition: transform var(--transition-standard);
     transition-property: transform, box-shadow, padding, margin-bottom;
 }
