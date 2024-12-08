@@ -554,6 +554,95 @@ textarea:focus::placeholder {
 
 /*
     ----------
+    Styling til event-cal
+    ----------
+*/
+
+.event-cal {
+    border-radius: var(--border-radius-normal);
+    overflow: hidden;
+}
+
+.event-cal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--fl-black);
+    color: var(--fl-white);
+}
+
+.event-cal__month {
+    margin: 0;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.event-cal__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--fl-white);
+    color: var(--fl-black);
+    padding: 8px 0;
+}
+
+.event-cal__weekday {
+    text-align: center;
+    margin: 0;
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+}
+
+.event-cal__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.event-cal__day {
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    background-color: var(--fl-gray);
+    color: var(--fl-black);
+    transition: background-color var(--transition-standard);
+}
+
+.event-cal__day--not-current-month {
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    background-color: var(--fl-darkgray);
+    color: color-mix(in srgb, var(--fl-darkgray), var(--fl-black) 20%);
+}
+
+.event-cal__day--has-event {
+    background-color: var(--fl-orange);
+    color: var(--fl-white);
+    cursor: pointer;
+}
+
+.event-cal__day--has-event:hover {
+    background-color: color-mix(in srgb, var(--fl-orange), var(--fl-black) 15%);
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 840px) {
+
+    .event-cal__day {
+        font-size: var(--font-size-normal);
+    }
+}
+
+/*
+    ----------
     Styling til header og tilhørende elementer
     ----------
 */
