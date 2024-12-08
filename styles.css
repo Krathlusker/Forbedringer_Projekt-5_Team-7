@@ -339,6 +339,20 @@ textarea:focus::placeholder {
     object-fit: cover;
 }
 
+.card__background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--fl-black);
+    background-image: url(img/halftone-pattern.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.4;
+}
+
 .card__tag {
     position: relative;
 }
