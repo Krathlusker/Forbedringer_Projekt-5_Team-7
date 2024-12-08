@@ -302,6 +302,14 @@ textarea:focus::placeholder {
     gap: 30px;
 }
 
+* + .cards {
+    margin-top: 30px;
+}
+
+.cards:has(+ *) {
+    margin-bottom: 30px;
+}
+
 .card {
     position: relative;
     border-radius: var(--border-radius-normal);
@@ -346,6 +354,126 @@ textarea:focus::placeholder {
 @media screen and (min-width: 840px) {
 
     .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*
+    ----------
+    Styling til ig-cards
+    ----------
+*/
+
+.ig-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+* + .ig-cards {
+    margin-top: 30px;
+}
+
+.ig-cards:has(+ *) {
+    margin-bottom: 30px;
+}
+
+.ig-card {
+    background-color: var(--fl-white);
+    color: var(--fl-black);
+}
+
+.ig-card__header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+}
+
+.ig-card__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ig-card__user-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ig-card__user-handle {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+}
+
+.ig-card__ig-logo {
+    height: 30px;
+    width: auto;
+    fill: var(--fl-black);
+    opacity: 0.4;
+    margin-left: auto;
+}
+
+.ig-card__image {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.ig-card__text {
+    font-size: var(--font-size-small);
+    padding: 12px 10px;
+}
+
+.ig-card__text a {
+    font-family: var(--font-stack-primary);
+    font-weight: var(--font-weight-normal);
+    color: #00376b;
+}
+
+.ig-card__footer {
+    padding: 10px;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ig-card__date {
+    margin-right: auto;
+}
+
+.ig-card__footer-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ig-card__footer-icon {
+    height: auto;
+    width: 20px;
+    fill: var(--fl-black);
+    opacity: 0.4;
+}
+
+.ig-card__footer p {
+    opacity: 0.4;
+}
+
+@media screen and (min-width: 600px) {
+
+    .ig-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .ig-cards {
         grid-template-columns: repeat(3, 1fr);
     }
 }
