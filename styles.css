@@ -480,6 +480,76 @@ textarea:focus::placeholder {
 
 /*
     ----------
+    Styling til employees
+    ----------
+*/
+
+.employees {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+* + .employees {
+    margin-top: 30px;
+}
+
+.employees:has(+ *) {
+    margin-bottom: 30px;
+}
+
+.employee__image {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.employee__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.employee__name {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.employee__name:has(+ *) {
+    margin-bottom: 0.125em;
+}
+
+.employee__job-title:has(+ *) {
+    margin-bottom: 0.75em;
+}
+
+.employee__link:has(+ .employee__link) {
+    margin-bottom: 0.25em;
+}
+
+* + .employee__bio {
+    margin-top: 1em;
+}
+
+@media screen and (min-width: 600px) {
+
+    .employees {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .employees {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*
+    ----------
     Styling til header og tilhørende elementer
     ----------
 */
