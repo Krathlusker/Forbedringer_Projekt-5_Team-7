@@ -1245,6 +1245,10 @@ button:hover,
     .footer-row {
         grid-template-columns: 1fr 1fr;
     }
+
+    .footer-column--span-2 {
+        grid-column: span 2;
+    }
 }
 
 @media screen and (min-width: 840px) {
