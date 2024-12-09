@@ -295,6 +295,36 @@ textarea:focus::placeholder {
 
 /*
     ----------
+    Styling til testimonials
+    ----------
+*/
+
+.testimonial {
+    padding: 15px 20px 30px;
+}
+
+.testimonial__quotation-mark {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: 6rem;
+    margin: 0 0 -2rem;
+    line-height: 1;
+    color: var(--fl-orange);
+}
+
+.testimonial__quote {
+    font-style: italic;
+}
+
+.testimonial__quotee {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    text-align: right;
+}
+
+/*
+    ----------
     Styling til cards
     ----------
 */
@@ -311,6 +341,27 @@ textarea:focus::placeholder {
 
 .cards:has(+ *) {
     margin-bottom: 30px;
+}
+
+.cards:has(.card-and-testimonial) {
+    gap: 40px;
+}
+
+.card-and-testimonial {
+    position: relative;
+}
+
+.card-and-testimonial .card {
+    position: relative;
+    z-index: 2;
+}
+
+.card-and-testimonial .testimonial {
+    padding-top: 25px;
+    position: relative;
+    transform: translateX(20px);
+    margin-top: -20px;
+    z-index: 1;
 }
 
 .card {
