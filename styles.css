@@ -269,6 +269,14 @@ select {
     box-sizing: border-box;
 }
 
+select[multiple] {
+    padding: 0;
+}
+
+select[multiple] option {
+    padding: 0.75em 0.75em 0.5em;
+}
+
 textarea {
     resize: none;
 }
@@ -277,7 +285,7 @@ textarea {
     position: relative;
 }
 
-.select-wrapper:not(.select-wrapper--no-arrow)::after {
+.select-wrapper:not(.select-wrapper--has-multiple)::after {
     content: '';
     position: absolute;
     top: 50%;
