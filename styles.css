@@ -1022,6 +1022,10 @@ textarea:focus::placeholder {
     padding: calc(1em - 5px) 1.25em;
 }
 
+.button--dark .icon--arrow {
+    fill: var(--fl-gray);
+}
+
 .pagination-arrow .icon--arrow {
     transform-origin: center center;
     width: 16px;
