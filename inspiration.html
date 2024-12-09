@@ -176,18 +176,42 @@
 
             </section>
 
-            <section class="section">
+            <section class="section background-blue">
 
                 <div class="content">
                     <h2 class="text-align-center">Alle projekter</h2>
 
-                    <div class="columns">
-                        <div class="column">
-                            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                        </div>
+                    <div class="wrapper wrapper--narrow">
+                        <p class="text-align-center">Her kan du sortere, så du kun ser inspiration med afsæt i de valgte uddannelser.<br>Men vi opfordrer dig til at kigge på de andre og tænke ud af boksen!</p>
 
-                        <div class="column">
-                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="form form--filters">
+                            <div class="form__element filter-wrapper">
+                                <label for="filter__subject">Fagområde</label>
+                                <div class="select-wrapper">
+                                    <select name="subject" id="filter__subject">
+                                        <option value="">Vis alle</option>
+                                        <option value="business-og-digital-udvikling">Business og digital udvikling</option>
+                                        <option value="byggeri-og-teknologi">Byggeri og teknologi</option>
+                                        <option value="ledelse-og-adminstration">Ledelse og adminstration</option>
+                                        <option value="paedagogik-og-undervisning">Pædagogik og undervisning</option>
+                                        <option value="sundhed-og-socialt-arbejde">Sundhed og socialt arbejde</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form__element filter-wrapper">
+                                <label for="filter__product-type">Produkttype</label>
+                                <div class="select-wrapper select-wrapper--no-arrow">
+                                    <select name="product-type" id="filter__product-type" multiple>
+                                        <option value="">Vis alle</option>
+                                        <option value="3d-printer">3D-printer</option>
+                                        <option value="laserskaerer">Laserskærer</option>
+                                        <option value="merchandise">Merchandise</option>
+                                        <option value="design-og-innovation">Design og innovation</option>
+                                        <option value="software-og-elektronik">Software og elektronik</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
