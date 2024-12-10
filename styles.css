@@ -247,6 +247,34 @@ h3 a {
 
 /*
     ----------
+    Styling til gallerier og tilhørende elementer
+    ----------
+*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.gallery__image {
+    width: 100%;
+    display: block;
+}
+
+@media screen and (min-width: 600px) {
+
+    .gallery--col-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery--col-2 .gallery__image--span-all {
+        grid-column: span 2;
+    }
+}
+
+/*
+    ----------
     Styling til formularer og tilhørende elementer
     ----------
 */
@@ -1170,6 +1198,10 @@ textarea:focus::placeholder {
 }
 
 .column {
+    width: 100%;
+}
+
+.column > .image {
     width: 100%;
 }
 
