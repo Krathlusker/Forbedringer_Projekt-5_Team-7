@@ -69,6 +69,10 @@ blockquote {
     ----------
 */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-stack-primary);
     font-size: var(--font-size-normal);
@@ -137,6 +141,10 @@ h1 a,
 h2 a,
 h3 a {
     font-family: var(--font-stack-primary);
+}
+
+[id*="i--"] {
+    scroll-margin-top: 80px;
 }
 
 /*
@@ -211,6 +219,22 @@ h3 a {
 .align-center {
     margin-right: auto;
     margin-left: auto;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.object-position-top {
+    object-position: top;
+}
+
+.object-position-bottom {
+    object-position: bottom;
 }
 
 @media screen and (min-width: 600px) {
@@ -1110,7 +1134,6 @@ textarea:focus::placeholder {
 .section--fifty-fifty > .wrapper > .image {
     height: 100%;
     width: 100%;
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
