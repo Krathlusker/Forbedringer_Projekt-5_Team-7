@@ -133,7 +133,7 @@ a {
     font-family: var(--font-stack-secondary);
     font-weight: var(--font-weight-bold);
     text-decoration: none;
-    color: var(--fl-orange);
+    color: currentColor;
     cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
 }
 
@@ -141,6 +141,7 @@ h1 a,
 h2 a,
 h3 a {
     font-family: var(--font-stack-primary);
+    color: var(--fl-orange);
 }
 
 [id*="i--"] {
@@ -1220,11 +1221,11 @@ textarea:focus::placeholder {
 }
 
 .faq {
-    border-top: 2px solid currentcolor;
+    border-top: 2px solid currentColor;
 }
 
 .faq:last-child {
-    border-bottom: 2px solid currentcolor;
+    border-bottom: 2px solid currentColor;
 }
 
 .faq__question {
@@ -1273,7 +1274,7 @@ textarea:focus::placeholder {
 }
 
 .faq__answer {
-    border-top: 1px solid currentcolor;
+    border-top: 1px solid currentColor;
     transform-origin: top center;
     transition: transform var(--transition-standard);
     transition-property: transform, padding, font-size;
