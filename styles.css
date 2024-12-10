@@ -1116,6 +1116,10 @@ textarea:focus::placeholder {
     flex-wrap: wrap;
 }
 
+.section--fifty-fifty > .wrapper:first-child:has(.image) {
+    order: 1;
+}
+
 .section--fifty-fifty > .wrapper {
     flex-basis: 100%;
     margin: 0;
@@ -1179,6 +1183,10 @@ textarea:focus::placeholder {
 
     .section--fifty-fifty > .wrapper {
         flex-basis: 50%;
+    }
+
+    .section--fifty-fifty > .wrapper:first-child:has(.image) {
+        order: 0;
     }
 
     .section--fifty-fifty > .wrapper:first-child > .content,
