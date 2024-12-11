@@ -422,6 +422,12 @@ textarea:focus::placeholder {
     gap: 30px;
 }
 
+.cards--overflow {
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+}
+
 * + .cards {
     margin-top: 30px;
 }
@@ -436,6 +442,16 @@ textarea:focus::placeholder {
 
 .card-and-testimonial {
     position: relative;
+}
+
+.cards--overflow > .card-and-testimonial {
+    flex-shrink: 0;
+    flex-basis: calc(100% - 20px);
+}
+
+.cards--overflow > .card {
+    flex-shrink: 0;
+    flex-basis: calc(100% - 40px);
 }
 
 .card-and-testimonial .card {
@@ -502,15 +518,31 @@ textarea:focus::placeholder {
 
 @media screen and (min-width: 600px) {
 
+    .cards--overflow > .card-and-testimonial {
+        flex-basis: calc(50% - 30px);
+    }
+
     .cards {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .cards--overflow > .card {
+        flex-basis: calc(50% - 55px);
     }
 }
 
 @media screen and (min-width: 840px) {
 
+    .cards--overflow > .card-and-testimonial {
+        flex-basis: calc(100% / 3 - calc(100px / 3));
+    }
+
     .cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards--overflow > .card {
+        flex-basis: calc(100% / 3 - 60px);
     }
 }
 
@@ -524,6 +556,17 @@ textarea:focus::placeholder {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+}
+
+.ig-cards--overflow {
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.ig-cards--overflow > .ig-card {
+    flex-shrink: 0;
+    flex-basis: 100%;
 }
 
 * + .ig-cards {
@@ -625,12 +668,20 @@ textarea:focus::placeholder {
     .ig-cards {
         grid-template-columns: 1fr 1fr;
     }
+
+    .ig-cards--overflow > .ig-card {
+        flex-basis: calc(50% - 15px);
+    }
 }
 
 @media screen and (min-width: 840px) {
 
     .ig-cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ig-cards--overflow > .ig-card {
+        flex-basis: calc(100% / 3 - 20px);
     }
 }
 
