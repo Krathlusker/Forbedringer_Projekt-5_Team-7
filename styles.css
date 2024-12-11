@@ -442,6 +442,7 @@ textarea:focus::placeholder {
 
 .card-and-testimonial {
     position: relative;
+    transition: transform var(--transition-standard);
 }
 
 .cards--overflow > .card-and-testimonial {
