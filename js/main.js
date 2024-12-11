@@ -43,3 +43,34 @@ faqs.forEach((faq) => {
         }
     });
 });
+
+
+const instagramArray = Array.from(document.querySelectorAll('.ig-cards .ig-cards--overflow'));
+
+let currentIndex = 0;
+
+const previousbutton = document.getElementById('.n--arrowleft');
+const nextbutton = document.getElementById('.n--arrowright');
+
+function updateCarousel() {
+    const track = document.querySelector('.ig-cards .ig-cards--overflow');
+    const cardWidth = instagramArray[0].getBoundingClientRect().width + 10;
+
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+previousbutton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
+});
+
+nextbutton.addEventListener('click', () => {
+    if (currentIndex < instagramArray.length - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
+});
+
+updateCarousel();
