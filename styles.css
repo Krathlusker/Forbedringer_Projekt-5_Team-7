@@ -81,7 +81,7 @@ body {
     background-color: var(--fl-gray);
     color: var(--fl-black);
     overflow-x: hidden;
-    cursor: url('img/custom-cursors/cursor-normal.svg'), url('img/custom-cursors/cursor-normal.png'), auto;
+    cursor: url('img/custom-cursors/cursor-normal.svg'), url('img/custom-cursors/cursor-normal.webp'), auto;
 }
 
 .body--no-scroll {
@@ -134,7 +134,7 @@ a {
     font-weight: var(--font-weight-bold);
     text-decoration: none;
     color: currentColor;
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
 }
 
 h1 a,
@@ -832,7 +832,7 @@ textarea:focus::placeholder {
 .event-cal__day--has-event {
     background-color: var(--fl-orange);
     color: var(--fl-white);
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
 }
 
 .event-cal__day--has-event:hover {
@@ -1074,7 +1074,7 @@ textarea:focus::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
 }
 
 .hamburger {
@@ -1114,7 +1114,7 @@ textarea:focus::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
 }
 
 .nav-close__icon {
@@ -1216,7 +1216,7 @@ textarea:focus::placeholder {
     background-color: var(--fl-gray);
     color: var(--fl-black);
     box-shadow: inset 0 -6px 0 color-mix(in srgb, var(--fl-gray), var(--fl-black) 40%);
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
     display: inline-block;
     transition: transform var(--transition-standard);
     transition-property: transform, box-shadow, padding, margin-bottom;
@@ -1421,7 +1421,7 @@ textarea:focus::placeholder {
 .faq__question {
     padding: 15px 65px 15px 20px;
     position: relative;
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.webp'), auto;
 }
 
 .faq__question p {
