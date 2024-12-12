@@ -114,6 +114,7 @@ function jCarouselNext(carousel, carouselCard, count, inView) {
         }
     }
 }
+
 //Nikolaj afsnit//
 
 const instagramArray = Array.from(document.querySelectorAll('.ig-card'));
