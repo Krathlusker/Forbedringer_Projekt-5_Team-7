@@ -1105,29 +1105,22 @@ textarea:focus::placeholder {
 }
 
 .nav-close {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     position: absolute;
-    top: 20px;
-    right: 15px;
-    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
+    top: 15px;
+    right: 20px;
+    background-color: var(--fl-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.nav-close__line {
-    height: 3px;
-    width: 30px;
-    background-color: var(--fl-black);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
-
-.nav-close__line:first-child {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.nav-close__line:last-child {
-    transform: translate(-50%, -50%) rotate(45deg);
+.nav-close__icon {
+    fill: var(--fl-white);
+    height: 25px;
+    width: auto;
 }
 
 @media screen and (min-width: 840px) {
