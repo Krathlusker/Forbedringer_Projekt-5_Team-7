@@ -114,3 +114,37 @@ function jCarouselNext(carousel, carouselCard, count, inView) {
         }
     }
 }
+//Nikolaj afsnit//
+
+const instagramArray = Array.from(document.querySelectorAll('.ig-card'));
+
+let currentIndex = 0;
+
+const previousbutton = document.getElementById('n--arrowleft');
+const nextbutton = document.getElementById('n--arrowright');
+
+function updateCarousel() {
+    const cardWidth = instagramArray[0].getBoundingClientRect().width;
+    const cardGap = instagramArray[1].getBoundingClientRect().x 
+    - instagramArray[0].getBoundingClientRect().x - cardWidth;
+   
+
+    for (let i = 0; i < instagramArray.length; i++) {
+        instagramArray[i].style.transform = `translateX(${currentIndex * (cardWidth + cardGap) * -1}px)`
+        instagramArray[i].style.transition = 'transform 0.3s ease';
+    }
+}
+
+previousbutton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
+});
+
+nextbutton.addEventListener('click', () => {
+    if (currentIndex < instagramArray.length - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
+});
