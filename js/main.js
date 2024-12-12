@@ -69,7 +69,7 @@ if (document.querySelectorAll('.j--cards')) {
         }
 
         jPaginationPrev.addEventListener('click', () => {
-            jCarouselPrev(jCarouselCards[i], jCarouselCard, jPaginationPrev);
+            jCarouselPrev(jCarouselCards[i], jCarouselCard);
         });
 
         jPaginationNext.addEventListener('click', () => {
@@ -84,7 +84,7 @@ function jCarouselReset(carouselCard) {
     }
 }
 
-function jCarouselPrev(carousel, carouselCard, paginationPrev) {
+function jCarouselPrev(carousel, carouselCard) {
     let carouselX = carousel.getBoundingClientRect().x;
     let cardX = carouselCard[0].getBoundingClientRect().x;
     let cardWidth = carouselCard[0].getBoundingClientRect().width;
