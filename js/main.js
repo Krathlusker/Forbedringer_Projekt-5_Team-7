@@ -115,37 +115,43 @@ function jCarouselNext(carousel, carouselCard, count, inView) {
     }
 }
 
-//Nikolaj afsnit//
+if (document.querySelector('.ig-card')) { // Tjek, om .ig-card findes på den pågældende side -- If-statement tilføjet af Jannick
 
-const instagramArray = Array.from(document.querySelectorAll('.ig-card'));
+    //Start på Nikolaj afsnit//
 
-let currentIndex = 0;
+    const instagramArray = Array.from(document.querySelectorAll('.ig-card'));
 
-const previousbutton = document.getElementById('n--arrowleft');
-const nextbutton = document.getElementById('n--arrowright');
+    let currentIndex = 0;
 
-function updateCarousel() {
-    const cardWidth = instagramArray[0].getBoundingClientRect().width;
-    const cardGap = instagramArray[1].getBoundingClientRect().x 
-    - instagramArray[0].getBoundingClientRect().x - cardWidth;
-   
+    const previousbutton = document.getElementById('n--arrowleft');
+    const nextbutton = document.getElementById('n--arrowright');
 
-    for (let i = 0; i < instagramArray.length; i++) {
-        instagramArray[i].style.transform = `translateX(${currentIndex * (cardWidth + cardGap) * -1}px)`
-        instagramArray[i].style.transition = 'transform 0.3s ease';
+    function updateCarousel() {
+        const cardWidth = instagramArray[0].getBoundingClientRect().width;
+        const cardGap = instagramArray[1].getBoundingClientRect().x 
+        - instagramArray[0].getBoundingClientRect().x - cardWidth;
+    
+
+        for (let i = 0; i < instagramArray.length; i++) {
+            instagramArray[i].style.transform = `translateX(${currentIndex * (cardWidth + cardGap) * -1}px)`
+            instagramArray[i].style.transition = 'transform 0.3s ease';
+        }
     }
+
+    previousbutton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextbutton.addEventListener('click', () => {
+        if (currentIndex < instagramArray.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    //Slut på Nikolaj afsnit//
+
 }
-
-previousbutton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-});
-
-nextbutton.addEventListener('click', () => {
-    if (currentIndex < instagramArray.length - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
