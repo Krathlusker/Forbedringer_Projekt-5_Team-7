@@ -2,7 +2,7 @@ const events = [
     {
         title: "3D-print-kursus",
         date: "12.12.2024", // Brug "dd-mm-yyyy"
-        description: "Hos os kan du lære at 3D-printe! Det bliver skide sjovt. På vores kursus lærer du alt lige fra 3D-moddellering til hvordan du får sat printeren igang. Kom ned og vær med!",
+        description: "Hos os kan du lære at 3D-printe! Det bliver rigtig sjovt. På vores kursus lærer du alt lige fra 3D-moddellering til hvordan du får sat printeren igang. Kom ned og vær med!",
         image: "./img/machines/3d-printer.webp",
     },
     {
