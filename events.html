@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/dfa7gvi.css">
     <link rel="stylesheet" href="styles.css">
     <script src="js/main.js" defer></script>
+    <script src="js/Frederik.js" defer></script>
     <title>Events og kurser - FabLab UCL</title>
 </head>
 <body>
@@ -113,11 +114,35 @@
             </section>
 
             <section class="section background-blue">
-
+                <div class="event-cal__overlay event-cal__overlay-hidden">
+                    <div class="event-cal__overlay-inner">
+                        <div class="event-cal__overlay-inset">
+                            <div class="event-cal__overlay-column-text">
+                                <h2 id="event-title">Title</h2>
+                                <p class="opening-hours" id="event-date">Dato</p>
+                            </div>
+                            <div class="event-cal__overlay-rows-text">
+                                <div class="event-cal__overlay-columns">
+                                    <div class="event-cal__overlay-text">
+                                        <p class="event-cal__overlay-column-text-p" id="event-description">Beskrivelse</p>
+                                    </div>
+                                </div>
+                                <div class="event-cal__overlay-columns">
+                                    <img class="image" id="event-image" src="img\machines\3d-printer.webp" alt="3d-printer">
+                                </div>
+                            </div>
+                            <div class="event-cal__overlay-button-wrapper">
+                                <button type="button" class="button event-cal__overlay-button" id="close-overlay">
+                                    LUK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="content">
                     <div class="columns">
                         <div class="column">
-                            <h2>Event-kalender</h2>
+                            <h2 title="Goddag">Event-kalender</h2>
                             <p>Her kan du se FabLabs kalender. Kalenderen kan du bruge til at finde alle vores events, workshops og specielle datoer – ikke kun hvornår vi har åbent.</p>
                             <p>Kalenderen opdateres løbende og vil kunne bruges til at finde frem til, hvornår vi har tid. Du kan altid komme ned og spørge om vejledning og hjælp til dit projekt, men der kan være dage, hvor vi har mere travlt end andre.</p>
                             <p>Fablab deltager ofte i tværgående workshops, hvor vi håber på at hjælpe studerende med innovation på tværs af deres normale kompetencefelt. Det er lige meget, om du er sygeplejestuderende eller grafisk designer. Alle er velkomne i FabLab.</p>
@@ -128,7 +153,7 @@
                                     <div class="button pagination-arrow pagination-arrow--left">
                                         <svg class="icon icon--arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 75"><polygon points="50 25 50 20 45 20 45 15 40 15 40 10 35 10 35 5 30 5 30 0 25 0 25 5 20 5 20 10 15 10 15 15 10 15 10 20 5 20 5 25 0 25 0 30 15 30 15 75 40 75 40 30 55 30 55 25 50 25"/></svg>
                                     </div>
-                                    <p class="event-cal__month">December</p>
+                                    <p class="event-cal__month"></p>
                                     <div class="button pagination-arrow pagination-arrow--right">
                                         <svg class="icon icon--arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 75"><polygon points="50 25 50 20 45 20 45 15 40 15 40 10 35 10 35 5 30 5 30 0 25 0 25 5 20 5 20 10 15 10 15 15 10 15 10 20 5 20 5 25 0 25 0 30 15 30 15 75 40 75 40 30 55 30 55 25 50 25"/></svg>
                                     </div>
@@ -145,49 +170,8 @@
                                 </div>
 
                                 <div class="event-cal__days">
-                                    <div class="event-cal__day event-cal__day--not-current-month">25.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">26.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">27.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">28.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">29.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">30.</div>
-                                    <div class="event-cal__day">1.</div>
-                                    <div class="event-cal__day">2.</div>
-                                    <div class="event-cal__day">3.</div>
-                                    <div class="event-cal__day">4.</div>
-                                    <div class="event-cal__day">5.</div>
-                                    <div class="event-cal__day">6.</div>
-                                    <div class="event-cal__day">7.</div>
-                                    <div class="event-cal__day">8.</div>
-                                    <div class="event-cal__day">9.</div>
-                                    <div class="event-cal__day">10.</div>
-                                    <div class="event-cal__day event-cal__day--has-event">11.</div>
-                                    <div class="event-cal__day">12.</div>
-                                    <div class="event-cal__day">13.</div>
-                                    <div class="event-cal__day">14.</div>
-                                    <div class="event-cal__day">15.</div>
-                                    <div class="event-cal__day">16.</div>
-                                    <div class="event-cal__day">17.</div>
-                                    <div class="event-cal__day">18.</div>
-                                    <div class="event-cal__day">19.</div>
-                                    <div class="event-cal__day">20.</div>
-                                    <div class="event-cal__day">21.</div>
-                                    <div class="event-cal__day">22.</div>
-                                    <div class="event-cal__day">23.</div>
-                                    <div class="event-cal__day">24.</div>
-                                    <div class="event-cal__day">25.</div>
-                                    <div class="event-cal__day event-cal__day--has-event">26.</div>
-                                    <div class="event-cal__day event-cal__day--has-event">27.</div>
-                                    <div class="event-cal__day">28.</div>
-                                    <div class="event-cal__day">29.</div>
-                                    <div class="event-cal__day">30.</div>
-                                    <div class="event-cal__day">31.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">1.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">2.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">3.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">4.</div>
-                                    <div class="event-cal__day event-cal__day--not-current-month">5.</div>
                                 </div>
+                                <div class="event-cal__day--selected-day"></div>
                             </div>
                         </div>
                     </div>
