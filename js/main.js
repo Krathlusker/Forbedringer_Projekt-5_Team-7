@@ -43,3 +43,74 @@ faqs.forEach((faq) => {
         }
     });
 });
+
+/* Karrusel-funktionalitet til inspirations-cards på forsiden (JANNICK) */
+
+if (document.querySelectorAll('.j--cards')) {
+    const jCarouselCards = document.querySelectorAll('.j--cards');
+
+    for (let i = 0; i < jCarouselCards.length; i++) {
+        const jPaginationPrev = jCarouselCards[i].nextElementSibling.querySelector('.j--pagination-prev');
+        const jPaginationNext = jCarouselCards[i].nextElementSibling.querySelector('.j--pagination-next');
+        const jCarouselCard = document.querySelectorAll('.j--card-and-testimonial');
+        let cardCount = jCarouselCard.length;
+        let cardsInView;
+
+        window.addEventListener('resize', () => {
+            jCarouselReset(jCarouselCard);
+        });
+
+        if (window.innerWidth < 600) {
+            cardsInView = 1;
+        } else if (window.innerWidth >= 600 && window.innerWidth < 840) {
+            cardsInView = 2;
+        } else {
+            cardsInView = 3;
+        }
+
+        jPaginationPrev.addEventListener('click', () => {
+            jCarouselPrev(jCarouselCards[i], jCarouselCard, jPaginationPrev);
+        });
+
+        jPaginationNext.addEventListener('click', () => {
+            jCarouselNext(jCarouselCards[i], jCarouselCard, cardCount, cardsInView);
+        });
+    }
+}
+
+function jCarouselReset(carouselCard) {
+    for (let i = 0; i < carouselCard.length; i++) {
+        carouselCard[i].style.transform = "translateX(0px)";
+    }
+}
+
+function jCarouselPrev(carousel, carouselCard, paginationPrev) {
+    let carouselX = carousel.getBoundingClientRect().x;
+    let cardX = carouselCard[0].getBoundingClientRect().x;
+    let cardWidth = carouselCard[0].getBoundingClientRect().width;
+    let cardGap = carouselCard[1].getBoundingClientRect().x - cardX - cardWidth;
+    let currentPos = cardX - carouselX;
+    if (currentPos >= -1) {
+        currentPos = 0;
+    } else {
+        for (let i = 0; i < carouselCard.length; i++) {
+            carouselCard[i].style.transform = "translateX(" + (currentPos + cardWidth + cardGap) + "px)";
+        }
+    }
+}
+
+function jCarouselNext(carousel, carouselCard, count, inView) {
+    let carouselX = carousel.getBoundingClientRect().x;
+    let cardX = carouselCard[0].getBoundingClientRect().x;
+    let cardWidth = carouselCard[0].getBoundingClientRect().width;
+    let cardGap = carouselCard[1].getBoundingClientRect().x - cardX - cardWidth;
+    let allCardsWidth = (cardWidth + cardGap) * count - cardGap;
+    let currentPos = cardX - carouselX;
+    if (currentPos < ((allCardsWidth - (cardWidth + cardGap) * (inView)) * -1)) {
+        currentPos = allCardsWidth;
+    } else {
+        for (let i = 0; i < carouselCard.length; i++) {
+            carouselCard[i].style.transform = "translateX(" + (currentPos - cardWidth - cardGap) + "px)";
+        }
+    }
+}

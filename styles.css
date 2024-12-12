@@ -442,6 +442,7 @@ textarea:focus::placeholder {
 
 .card-and-testimonial {
     position: relative;
+    transition: transform var(--transition-standard);
 }
 
 .cards--overflow > .card-and-testimonial {
@@ -814,6 +815,10 @@ textarea:focus::placeholder {
     transition: background-color var(--transition-standard);
 }
 
+.event-cal__day--today {
+    border: 5px solid var(--fl-black);
+}
+
 .event-cal__day--not-current-month {
     aspect-ratio: 1 / 1;
     padding: 10px;
@@ -834,7 +839,108 @@ textarea:focus::placeholder {
     background-color: color-mix(in srgb, var(--fl-orange), var(--fl-black) 15%);
 }
 
+.event-cal__overlay {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index:1001;
+    background-color: rgba(43, 43, 43, .9);
+}
+
+.event-cal__overlay-hidden {
+    display: none;
+}
+
+.event-cal__overlay-inner {
+    position: fixed;
+    overflow-y: auto;
+    inset: 5%;
+    width: 90%;
+    height: fit-content;
+    z-index:1002;
+    background-color: var(--fl-black);
+    margin: auto;
+}
+
+.event-cal__overlay-inset {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-cal__overlay-inner {
+    display: block;
+    /* border: 5px solid var(--fl-green); */
+    max-width: 800px;
+}
+
+.event-cal__overlay-rows-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 20px;
+    /* border: 5px solid var(--fl-orange); */
+}
+
+.event-cal__overlay-column-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: fit-content;
+    /* border: 5px solid var(--fl-orange); */
+}
+
+.event-cal__overlay-column-text > p, h2 {
+    width: fit-content;
+    height: fit-content;
+}
+
+.event-cal__overlay-column-text-p {
+    min-width: 100px;
+}
+
+.event-cal__overlay-columns {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    /* border: 5px solid var(--fl-blue); */
+}
+
+.event-cal__overlay-columns > .image {
+    width: 100%;
+    max-height: 500px;
+    max-width: 500px;
+    min-height: 200px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.event-cal__overlay-button {
+    margin-top: 15px;
+}
+
+.event-cal__overlay-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media screen and (min-width: 600px) {
+    .event-cal__overlay-rows-text {
+        flex-direction: row;
+    }
+    
+    .event-cal__overlay-columns > .image {
+        max-width: 900px;
+    }
+
 }
 
 @media screen and (min-width: 840px) {
