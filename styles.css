@@ -1114,7 +1114,7 @@ textarea:focus::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    cursor: url('img/custom-cursors/cursor-pointer.svg'), url('img/custom-cursors/cursor-pointer.png'), auto;
 }
 
 .nav-close__icon {
