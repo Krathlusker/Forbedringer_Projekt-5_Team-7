@@ -92,7 +92,6 @@ function jCarouselPrev(carousel, carouselCard, paginationPrev) {
     let currentPos = cardX - carouselX;
     if (currentPos >= -1) {
         currentPos = 0;
-        paginationPrev.classList.add('button--disabled');
     } else {
         for (let i = 0; i < carouselCard.length; i++) {
             carouselCard[i].style.transform = "translateX(" + (currentPos + cardWidth + cardGap) + "px)";
