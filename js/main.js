@@ -44,19 +44,25 @@ faqs.forEach((faq) => {
     });
 });
 
+//Nikolaj afsnit//
 
-const instagramArray = Array.from(document.querySelectorAll('.ig-cards .ig-cards--overflow'));
+const instagramArray = Array.from(document.querySelectorAll('.ig-card'));
 
 let currentIndex = 0;
 
-const previousbutton = document.getElementById('.n--arrowleft');
-const nextbutton = document.getElementById('.n--arrowright');
+const previousbutton = document.getElementById('n--arrowleft');
+const nextbutton = document.getElementById('n--arrowright');
 
 function updateCarousel() {
-    const track = document.querySelector('.ig-cards .ig-cards--overflow');
-    const cardWidth = instagramArray[0].getBoundingClientRect().width + 10;
+    const cardWidth = instagramArray[0].getBoundingClientRect().width;
+    const cardGap = instagramArray[1].getBoundingClientRect().x 
+    - instagramArray[0].getBoundingClientRect().x - cardWidth;
+   
 
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    for (let i = 0; i < instagramArray.length; i++) {
+        instagramArray[i].style.transform = `translateX(${currentIndex * (cardWidth + cardGap) * -1}px)`
+        instagramArray[i].style.transition = 'transform 0.3s ease';
+    }
 }
 
 previousbutton.addEventListener('click', () => {
@@ -72,5 +78,3 @@ nextbutton.addEventListener('click', () => {
         updateCarousel();
     }
 });
-
-updateCarousel();
