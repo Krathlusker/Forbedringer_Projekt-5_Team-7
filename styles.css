@@ -895,7 +895,7 @@ textarea:focus::placeholder {
     /* border: 5px solid var(--fl-orange); */
 }
 
-.event-cal__overlay-column-text > p, h2 {
+.event-cal__overlay-column-text > p, .event-cal__overlay-column-text > h2 {
     width: fit-content;
     height: fit-content;
 }
