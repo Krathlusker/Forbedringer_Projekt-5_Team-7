@@ -828,6 +828,7 @@ textarea:focus::placeholder {
     background-color: var(--fl-darkgray);
     color: color-mix(in srgb, var(--fl-darkgray), var(--fl-black) 20%);
 }
+/** color-mix validere ikke, fordi W3 validator ikke har implementeret alle funktioner som er gået fra experimental til baseline 2023 https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix **/
 
 .event-cal__day--has-event {
     background-color: var(--fl-orange);
@@ -838,6 +839,8 @@ textarea:focus::placeholder {
 .event-cal__day--has-event:hover {
     background-color: color-mix(in srgb, var(--fl-orange), var(--fl-black) 15%);
 }
+
+/** color-mix validere ikke, fordi W3 validator ikke har implementeret alle funktioner som er gået fra experimental til baseline 2023 https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix **/
 
 .event-cal__overlay {
     position: fixed;
@@ -1569,4 +1572,13 @@ textarea:focus::placeholder {
     .footer-row {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/** Antons CSS **/
+.a--filterDiv {
+    display: none;
+}
+
+.a--show {
+    display:flex;
 }
