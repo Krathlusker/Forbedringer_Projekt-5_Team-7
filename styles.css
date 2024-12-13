@@ -816,7 +816,7 @@ textarea:focus::placeholder {
 }
 
 .event-cal__day--today {
-    border: 5px solid var(--fl-black);
+    box-shadow: inset 0 0 0 5px var(--fl-black);
 }
 
 .event-cal__day--not-current-month {
