@@ -542,6 +542,10 @@ textarea:focus::placeholder {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .cards--grid-col-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .cards--overflow > .card {
         flex-basis: calc(100% / 3 - 60px);
     }
