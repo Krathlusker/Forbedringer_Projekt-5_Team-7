@@ -1546,6 +1546,8 @@ textarea:focus::placeholder {
     text-decoration: none;
     left: 1ch;
     color: var(--fl-white);
+    display: inline-block;
+    transition: transform var(--transition-standard);
 }
 
 .footer-list__link::before {
@@ -1553,6 +1555,16 @@ textarea:focus::placeholder {
     position: relative;
     left: -1ch;
     color: var(--fl-orange);
+    display: inline-block;
+    transition: transform var(--transition-standard);
+}
+
+.footer-list__link:hover {
+    transform: translateX(0.5ch);
+}
+
+.footer-list__link:hover::before {
+    transform: translateX(-0.5ch);
 }
 
 .footer__maps {
