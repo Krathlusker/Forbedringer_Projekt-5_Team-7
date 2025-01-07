@@ -475,9 +475,13 @@ textarea:focus::placeholder {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 20px;
     min-height: 280px;
+}
+
+.card:has(.card__tag) {
+    justify-content: space-between;
 }
 
 .card__background {
