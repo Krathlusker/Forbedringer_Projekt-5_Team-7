@@ -943,6 +943,19 @@ textarea:focus::placeholder {
     justify-content: flex-end;
 }
 
+.event-meta {
+    display: flex;
+    gap: 1ch;
+}
+
+.event-meta__date,
+.event-meta__time {
+    font-family: var(--font-stack-secondary);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--fl-orange);
+}
+
 @media screen and (min-width: 600px) {
     .event-cal__overlay-rows-text {
         flex-direction: row;
