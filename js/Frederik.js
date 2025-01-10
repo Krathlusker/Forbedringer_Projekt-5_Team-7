@@ -2,57 +2,73 @@ const events = [
     {
         title: "3D-print-kursus",
         date: "12.12.2024", // Brug "dd-mm-yyyy"
+        time: "12.15",
         description: "Hos os kan du lære at 3D-printe! Det bliver rigtig sjovt. På vores kursus lærer du alt lige fra 3D-moddellering til hvordan du får sat printeren igang. Kom ned og vær med!",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/machines/3d-printer.webp",
     },
     {
         title: "Lasercutter-kursus",
         date: "19.1.2025",
+        time: "13.00",
         description: "Drømmer du også om at lave dine egne avancerede prototyper? Med et kursus i vores lasercuttere, åbner du op for mange muligheder for at gøre dine idéer til virkelighed.",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/temp/277463923_2021874247973141_387521198919364496_n.webp",
     },
     {
         title: "Tekstiltryk-kursus",
         date: "8.1.2025",
+        time: "10.00",
         description: "Kom og lær hvordan du kan lave dine egne t-shirt prints! På vores tekstiltrykkursus bliver du rustet til at lave tryk på mange forskellige tekstiler. Det er også lidt fedt at have sine egne t-shirts, når man skal lave pitch med sine studiekammerater.",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/machines/tekstilprinter.webp",
     },
     {
         title: "Design Thinking Workshop",
         date: "20.2.2025",
+        time: "10.00",
         description: "Har du en idé, men mangler du processen til at gøre den til virkelighed? På vores Design Thinking workshop lærer du en metode, der sikrer, at du udvikler brugerfokuserede og innovative løsninger. Kom og prøv kræfter med processen i praksis!",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/temp/Wikimania_2024_-_GLAM_Global_Meetup_afternoon_03_-_Sustainable_Future_brainstorming.webp",
     },
     {
         title: "Illustrator for begyndere",
         date: "15.3.2025",
+        time: "12.15",
         description: "Vil du gerne lave dine egne flotte designs? På dette kursus lærer du de grundlæggende funktioner i Adobe Illustrator. Vi gennemgår værktøjer, teknikker og små tricks, så du kan skabe imponerende grafik til dine projekter.",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/temp/41689670925_b8810ebdff_c.webp",
     },
     {
         title: "Tinkercad Introduktion",
         date: "22.3.2025",
+        time: "12.15",
         description: "Kom og lær Tinkercad, et simpelt og kraftfuldt værktøj til 3D-design. Kurset er perfekt for begyndere og giver dig mulighed for hurtigt at skabe digitale modeller, som du kan printe på vores 3D-printere. Tag første skridt mod at bringe dine idéer til livs!",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/temp/large_display_Dice_1.webp",
     },
     {
         title: "Prusa XL Multitool Printer Workshop",
         date: "10.4.2025",
+        time: "10.00",
         description: "Oplev det nyeste inden for 3D-printteknologi med Prusa XL multitool printeren. Lær hvordan du kan kombinere forskellige materialer og teknikker i én enkelt printproces. En spændende mulighed for dem, der vil tage deres prototyper til næste niveau!",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/machines/Original_Prusa_XL_spool.webp",
     },
     {
         title: "Elektronik og kredsløb",
         date: "18.6.2025",
+        time: "12.15",
         description: "Vil du gerne lære at bygge dine egne elektroniske kredsløb? På dette kursus tager vi dig igennem grundprincipperne i elektronik, fra lodning til opsætning af simple kredsløb. Perfekt til prototyping og gadgets.",
+        join: "Tilmelding: Via mail eller telefon",
         image: "./img/temp/Arduino-based_wow-and-flutter_meter_03.webp",
     }
 ];
 
 
 let visning = document.querySelector(".event-cal__month");
-let forrige = document.querySelector(".pagination-arrow--left");
-let naeste = document.querySelector(".pagination-arrow--right");
+let forrige = document.getElementById("event-cal-left");
+let naeste = document.getElementById("event-cal-right");
 let dage = document.querySelector(".event-cal__days");
 let valgt = document.querySelector(".event-cal__day--selected-day");
 
@@ -172,13 +188,17 @@ function openOverlay(event) {
     const overlay = document.querySelector(".event-cal__overlay");
     const title = document.getElementById("event-title");
     const date = document.getElementById("event-date");
+    const time = document.getElementById("event-time");
     const description = document.getElementById("event-description");
+    const join = document.getElementById("event-join");
     const image = document.getElementById("event-image");
 
     // Opdater overlay-indhold
     title.innerText = event.title;
     date.innerText = `Dato: ${event.date}`;
+    time.innerText = `kl: ${event.time}`;
     description.innerText = event.description;
+    join.innerText = event.join;
     image.src = event.image;
 
     // Vis overlay
