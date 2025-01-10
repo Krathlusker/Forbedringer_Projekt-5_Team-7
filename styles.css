@@ -478,6 +478,7 @@ textarea:focus::placeholder {
     justify-content: flex-end;
     padding: 20px;
     min-height: 280px;
+    transition: transform var(--transition-standard);
 }
 
 .card:has(.card__tag) {
