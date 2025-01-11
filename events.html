@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="styles.css">
     <script src="js/main.js" defer></script>
     <script src="js/rose.js" defer></script>
-    <script src="js/Frederik.js" defer></script>
+    <script src="js/events.js" defer></script>
+    <script src="js/kalender.js" defer></script>
+    <script src="js/overlay.js" defer></script>
     <title>Events og kurser - FabLab UCL</title>
 </head>
 <body>
@@ -133,7 +135,7 @@
                             <div class="card__content">
                                 <h3 class="card__title">3D-print-kursus</h3>
                                 <p class="card__excerpt">Hos os kan du lære at 3D-printe! Det bliver rigtig sjovt. På vores kursus lærer du alt lige fra 3D-modellering til...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="12.12.2024" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
 
@@ -148,7 +150,7 @@
                             <div class="card__content">
                                 <h3 class="card__title">Tekstiltryk-kursus</h3>
                                 <p class="card__excerpt">Kom og lær, hvordan du kan lave dine egne t-shirt-prints! På vores tekstiltrykkursus bliver du rustet til at lave tryk...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="8.1.2025" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
 
@@ -163,7 +165,7 @@
                             <div class="card__content">
                                 <h3 class="card__title">Lasercutter-kursus</h3>
                                 <p class="card__excerpt">Drømmer du også om at lave dine egne avancerede prototyper? Med et kursus i vores lasercuttere, åbner du op for mange...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="19.1.2025" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
 
@@ -178,7 +180,7 @@
                             <div class="card__content">
                                 <h3 class="card__title">Design Thinking Workshop</h3>
                                 <p class="card__excerpt">Har du en idé, men mangler du processen til at gøre den til virkelighed? På vores Design Thinking-workshop lærer du...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="20.2.2025" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
 
@@ -188,12 +190,12 @@
                                 <div class="card__background-overlay"></div>
                             </div>
 
-                            <p class="tag card__tag background-orange">15. marts 2024 kl. 12.15</p>
+                            <p class="tag card__tag background-orange">15. marts 2025 kl. 12.15</p>
 
                             <div class="card__content">
                                 <h3 class="card__title">Illustrator for begyndere</h3>
                                 <p class="card__excerpt">Vil du gerne lave dine egne flotte designs? På dette kursus lærer du de grundlæggende funktioner i Adobe Illustrator...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="15.3.2025" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
 
@@ -208,7 +210,7 @@
                             <div class="card__content">
                                 <h3 class="card__title">Tinkercad Introduktion</h3>
                                 <p class="card__excerpt">Kom og lær Tinkercad, et simpelt og kraftfuldt værktøj til 3D-design. Kurset er perfekt for begyndere og giver dig...</p>
-                                <a href="#" class="button">Se mere</a>
+                                <button data-dato="22.3.2025" type="button" aria-label="Åben overlay med info om event" class="button buttonSeMere">Se mere</button>
                             </div>
                         </div>
                     </div>
@@ -464,7 +466,7 @@
                 <div class="footer-column footer-column--span-2">
                     <h2 class="footer__heading">Find os</h2>
 
-                    <iframe class="footer__maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18642.696947167744!2d10.370912007478935!3d55.40264692449157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464cdff64be99313%3A0xaa101b9beac9ee2!2sUCL%20Erhvervsakademi%20og%20Professionsh%C3%B8jskole%20%7C%20afd.%20Seebladsgade!5e1!3m2!1sda!2sdk!4v1733742069463!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe title="Google Maps Lokation" class="footer__maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18642.696947167744!2d10.370912007478935!3d55.40264692449157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464cdff64be99313%3A0xaa101b9beac9ee2!2sUCL%20Erhvervsakademi%20og%20Professionsh%C3%B8jskole%20%7C%20afd.%20Seebladsgade!5e1!3m2!1sda!2sdk!4v1733742069463!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
             </div>
