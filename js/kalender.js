@@ -41,7 +41,7 @@ function visKalender() {
         div.innerHTML = j;                                                  // Vis dagnummer i div-element (1-31) <-- Se loop ovenfor
         div.classList.add("event-cal__day");
 
-        // Markér dags dato
+        // Markér dags dato med CSS-klasse som giver en stroke rundt om dagen
         if (
             dagsDato.getFullYear() === new Date().getFullYear() &&          // Sammenlign årstalet for dagsdato og nuværende dato, && betyder "og"
             dagsDato.getMonth() === new Date().getMonth() &&
@@ -50,14 +50,14 @@ function visKalender() {
             div.classList.add("event-cal__day--today");
         }
 
-        // Markér dage med events
+        // Markér dage med events med CSS-klasse som giver div en orange farve
         if (events.some(event => event.date === lokalDato)) {               // Tjek om der er et event på den aktuelle dag ved at benytte array-metoden some, som returnerer true hvis mindst ét element i arrayet opfylder betingelsen. "some" metodens argument er en callback-funktion, som tager et element som argument og returnerer true eller false. I dette tilfælde tjekker vi om eventets dato matcher lokalDato
             div.classList.add("event-cal__day--has-event");                 // Tilføj CSS-klasse til div-element hvis der er et event på den aktuelle dag
         }
 
         div.addEventListener("click", () => {
             const event = events.find(event => event.date === lokalDato);   // Find eventet for den aktuelle dag
-            // console.log(`Clicked on: ${lokalDato}`, event);                 // Debug log
+            // console.log(`Clicked on: ${lokalDato}`, event);              // Debug log
             if (event) {                                                    // Hvis variablen event er sand <-- se event, som peger på events-arrayet ovenfor (events.some()
                 openOverlay(event);                                         // Åbn overlay med eventet
             }
@@ -79,12 +79,12 @@ function visKalender() {
 
 function visValgt() {
     const dagElementer = document.querySelectorAll(".event-cal__day");
-    dagElementer.forEach((dag) => {
+    dagElementer.forEach(dag => {
         dag.replaceWith(dag.cloneNode(true));                               // Fjern eventlisteners fra dage for at undgå duplikering ved klik på forrige/naeste måned pilene - uden denne linje vil eventlisteners blive tilføjet flere gange ved klik på forrige/naeste måned (performance issue)
     });
     const opdateredeDage = document.querySelectorAll(".event-cal__day");
-    opdateredeDage.forEach((dag) => {
-        dag.addEventListener("click", (e) => {                              // (e) er en event-objekt, som indeholder information om det event, der er blevet udløst - dvs. den data der er tilknyttet eventet, i dette tilfælde datoen for den valgte dag (dataset.dato), som bruges til at finde eventet i events-arrayet
+    opdateredeDage.forEach(dag => {
+        dag.addEventListener("click", (e) => {                              // (e) er et event-objekt, som indeholder information om det event, der er blevet udløst - dvs. den data der er tilknyttet eventet der er blevet trykket på, i dette tilfælde datoen for den valgte dag (dataset.dato), som bruges til at finde eventet i events-arrayet i events.js
             const valgtDag = e.target.dataset.dato;                         // Hent datoen for den valgte dag fra dataset (se visKalender-funktion) - e.target refererer til det element, der udløste eventet
         });
     });

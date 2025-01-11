@@ -859,6 +859,12 @@ textarea:focus::placeholder {
     height: 100%;
     z-index:1001;
     background-color: rgba(43, 43, 43, .9);
+    opacity: 0;
+    transition: opacity var(--transition-standard);
+}
+
+.event-cal__overlay-visible {
+    opacity: 1; /* Gør overlayet synligt */
 }
 
 .event-cal__overlay-hidden {
