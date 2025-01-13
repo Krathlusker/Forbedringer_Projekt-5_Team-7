@@ -41,13 +41,13 @@ function visKalender() {
         div.innerHTML = j;                                                  // Vis dagnummer i div-element (1-31) <-- Se loop ovenfor
         div.classList.add("event-cal__day");
 
-        // Markér dags dato med CSS-klasse som giver en stroke rundt om dagen
+        // Markér dags dato med CSS-klasse som giver en stroke rundt om dagen - hvilket foregår uden for !!! lokalDato !!! - det er et uformatet datoobjekt (ISO-standard i lokal tidszone) 
         if (
-            dagsDato.getFullYear() === new Date().getFullYear() &&          // Sammenlign årstalet for dagsdato og nuværende dato, && betyder "og"
+            dagsDato.getFullYear() === new Date().getFullYear() &&          // Sammenlign årstalet for dagsdato og nuværende dato, && betyder "og" - alle betingelser skal være sande for at udføre handlingen
             dagsDato.getMonth() === new Date().getMonth() &&
             dagsDato.getDate() === new Date().getDate()
         ) {
-            div.classList.add("event-cal__day--today");
+            div.classList.add("event-cal__day--today");                     // Tilføj CSS-klasse til div-element hvis det er dags dato
         }
 
         // Markér dage med events med CSS-klasse som giver div en orange farve
@@ -75,21 +75,6 @@ function visKalender() {
         dage.appendChild(div);
     }
 }
-
-
-function visValgt() {
-    const dagElementer = document.querySelectorAll(".event-cal__day");
-    dagElementer.forEach(dag => {
-        dag.replaceWith(dag.cloneNode(true));                               // Fjern eventlisteners fra dage for at undgå duplikering ved klik på forrige/naeste måned pilene - uden denne linje vil eventlisteners blive tilføjet flere gange ved klik på forrige/naeste måned (performance issue)
-    });
-    const opdateredeDage = document.querySelectorAll(".event-cal__day");
-    opdateredeDage.forEach(dag => {
-        dag.addEventListener("click", (e) => {                              // (e) er et event-objekt, som indeholder information om det event, der er blevet udløst - dvs. den data der er tilknyttet eventet der er blevet trykket på, i dette tilfælde datoen for den valgte dag (dataset.dato), som bruges til at finde eventet i events-arrayet i events.js
-            const valgtDag = e.target.dataset.dato;                         // Hent datoen for den valgte dag fra dataset (se visKalender-funktion) - e.target refererer til det element, der udløste eventet
-        });
-    });
-}
-
 
 // Navigationsknapper
 forrige.addEventListener("click", () => {
