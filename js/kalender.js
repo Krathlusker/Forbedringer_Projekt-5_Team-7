@@ -37,7 +37,7 @@ function visKalender() {
         // Brug lokal datoformat (ISO-standard i lokal tidszone) for korrekt sammenligning
         const lokalDato = dagsDato.toLocaleDateString("da-DK");             // "dd-mm-yyyy" format
 
-        div.dataset.dato = lokalDato;                                       // Brug "dd-mm-yyyy" format - lav et dataset til senere brug i eventlistener (se visValgt-funktion) som indeholder datoen som er tilknyttet div-elementet
+        div.dataset.dato = lokalDato;                                       // Brug "dd-mm-yyyy" format - lav et dataset til senere brug i eventlisteneren for at sammenligne med eventets dato i events-arrayet (se nedenfor) i afsnittet "Markér dage med events"
         div.innerHTML = j;                                                  // Vis dagnummer i div-element (1-31) <-- Se loop ovenfor
         div.classList.add("event-cal__day");
 
